@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bravobest.iml" filepath="$PROJECT_DIR$/bravobest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bravobest-api/bravobest-api.iml" filepath="$PROJECT_DIR$/bravobest-api/bravobest-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bravobest-binterface/bravobest-binterface.iml" filepath="$PROJECT_DIR$/bravobest-binterface/bravobest-binterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bravobest-common/bravobest-common.iml" filepath="$PROJECT_DIR$/bravobest-common/bravobest-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bravobest-dao/bravobest-dao.iml" filepath="$PROJECT_DIR$/bravobest-dao/bravobest-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bravobest-service/bravobest-service.iml" filepath="$PROJECT_DIR$/bravobest-service/bravobest-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bravobest-web/bravobest-web.iml" filepath="$PROJECT_DIR$/bravobest-web/bravobest-web.iml" />
+    </modules>
+  </component>
+</project>

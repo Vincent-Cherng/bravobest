@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bravobest-binterface" />
+        <module name="bravobest-dao" />
+        <module name="bravobest-service" />
+        <module name="bravobest-common" />
+        <module name="bravobest-web" />
+        <module name="bravobest-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bravobest" target="1.8" />
+      <module name="bravobest-api" target="1.8" />
+      <module name="bravobest-binterface" target="1.8" />
+      <module name="bravobest-common" target="1.8" />
+      <module name="bravobest-dao" target="1.8" />
+      <module name="bravobest-service" target="1.8" />
+      <module name="bravobest-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bravobest" options="-parameters" />
+      <module name="bravobest-api" options="-parameters" />
+      <module name="bravobest-binterface" options="-parameters" />
+      <module name="bravobest-common" options="-parameters" />
+      <module name="bravobest-dao" options="-parameters" />
+      <module name="bravobest-service" options="-parameters" />
+      <module name="bravobest-web" options="-parameters" />
+    </option>
+  </component>
+</project>

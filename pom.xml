@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 基本信息 -->
+    <name>bravobest</name>
+    <description>Demo project for Spring Boot</description>
+
+    <!-- 作为项目的父工程 -->
+    <groupId>com.bravo</groupId>
+    <artifactId>bravobest</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!-- 多个模块 -->
+    <modules>
+        <module>bravobest-web</module>
+        <module>bravobest-service</module>
+        <module>bravobest-dao</module>
+        <module>bravobest-binterface</module>
+        <module>bravobest-common</module>
+        <module>bravobest-api</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <bravobest.version>1.0.0</bravobest.version>
+        <!--<springboot.version>2.2.2.RELEASE</springboot.version>-->
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--可以不引入springboot的jar-->
+            <!--<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>-->
+            <dependency>
+                <groupId>com.bravo</groupId>
+                <artifactId>bravobest-api</artifactId>
+                <version>${bravobest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bravo</groupId>
+                <artifactId>bravobest-binterface</artifactId>
+                <version>${bravobest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bravo</groupId>
+                <artifactId>bravobest-common</artifactId>
+                <version>${bravobest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bravo</groupId>
+                <artifactId>bravobest-dao</artifactId>
+                <version>${bravobest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bravo</groupId>
+                <artifactId>bravobest-service</artifactId>
+                <version>${bravobest.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

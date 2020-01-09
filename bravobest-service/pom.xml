@@ -10,6 +10,7 @@
     <groupId>com.bravo</groupId>
     <artifactId>bravobest-service</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
     <name>bravobest-service</name>
     <description>Demo project for Spring Boot</description>
 
@@ -33,6 +34,20 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!--引入本工程其他模块的依赖-->
+        <dependency>
+            <groupId>com.bravo</groupId>
+            <artifactId>bravobest-binterface</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.bravo</groupId>
+            <artifactId>bravobest-dao</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.bravo</groupId>
+            <artifactId>bravobest-common</artifactId>
         </dependency>
     </dependencies>
 

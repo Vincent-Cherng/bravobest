@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bravobest-web:war">
+    <output-path>$PROJECT_DIR$/bravobest-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>bravobest-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="bravobest-web-1.0.0.war">
+      <element id="artifact" artifact-name="bravobest-web:war exploded" />
+    </root>
+  </artifact>
+</component>

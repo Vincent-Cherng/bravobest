@@ -18,7 +18,7 @@
     <!-- 作为项目的父工程 -->
     <groupId>com.bravo</groupId>
     <artifactId>bravobest</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <!-- 多个模块 -->

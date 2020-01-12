@@ -13,6 +13,10 @@ public class User implements Serializable {
 
     private String userName;
 
+    private String loginName;
+
+    private String password;
+
     private String age;
 
     private String sex;
@@ -148,12 +152,30 @@ public class User implements Serializable {
         this.leaveDate = leaveDate;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLoginName() {
+        return loginName;
+    }
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "userNo='" + userNo + '\'' +
                 ", orgNo='" + orgNo + '\'' +
                 ", userName='" + userName + '\'' +
+                ", loginName='" + loginName + '\'' +
+                ", password='" + password + '\'' +
                 ", age='" + age + '\'' +
                 ", sex='" + sex + '\'' +
                 ", teleNum='" + teleNum + '\'' +

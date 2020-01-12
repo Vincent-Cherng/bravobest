@@ -1,4 +1,4 @@
-package com.bravo.bravobest.binterface.org;
+package com.bravo.bravobest.binterface;
 
 import com.bravo.bravobet.api.entity.Org;
 
@@ -13,7 +13,7 @@ public interface OrgService {
      * @return
      * @throws Exception
      */
-    List<Org> queryList(Map<String,Object> pmap) throws Exception;
+    List<Org> queryList(Map<String, Object> pmap) throws Exception;
 
     /**
      * 查询单个部门
@@ -21,7 +21,7 @@ public interface OrgService {
      * @return
      * @throws Exception
      */
-    Org queryOne(Map<String,Object> pmap) throws Exception;
+    Org queryOne(Map<String, Object> pmap) throws Exception;
 
 
 

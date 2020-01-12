@@ -8,7 +8,7 @@ public class Org implements Serializable {
 
     private String orgName;
 
-    private String orgManagerNo;
+    private String orgChief;
 
 
     public String getOrgNo() {
@@ -27,12 +27,12 @@ public class Org implements Serializable {
         this.orgName = orgName;
     }
 
-    public String getOrgManagerNo() {
-        return orgManagerNo;
+    public String getOrgChief() {
+        return orgChief;
     }
 
-    public void setOrgManagerNo(String orgManagerNo) {
-        this.orgManagerNo = orgManagerNo;
+    public void setOrgChief(String orgChief) {
+        this.orgChief = orgChief;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Org implements Serializable {
         return "Org{" +
                 "orgNo='" + orgNo + '\'' +
                 ", orgName='" + orgName + '\'' +
-                ", orgManagerNo='" + orgManagerNo + '\'' +
+                ", orgChief='" + orgChief + '\'' +
                 '}';
     }
 }

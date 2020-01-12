@@ -1,9 +1,12 @@
-package com.bravo.bravobest.dao.org;
+package com.bravo.bravobest.dao;
 
 import com.bravo.bravobet.api.entity.Org;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public interface OrgDao {
 
     /**
@@ -12,7 +15,7 @@ public interface OrgDao {
      * @return
      * @throws Exception
      */
-    List<Org> queryList(Map<String,Object> pmap) throws Exception;
+    List<Org> queryList(Map<String, Object> pmap) throws Exception;
 
     /**
      * 查询
@@ -20,5 +23,5 @@ public interface OrgDao {
      * @return
      * @throws Exception
      */
-    Org queryOne(Map<String,Object> pmap) throws Exception;
+    Org queryOne(Map<String, Object> pmap) throws Exception;
 }

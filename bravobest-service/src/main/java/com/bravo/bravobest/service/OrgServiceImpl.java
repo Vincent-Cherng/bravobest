@@ -1,16 +1,23 @@
-package com.bravo.bravobest.service.org;
+package com.bravo.bravobest.service;
 
-import com.bravo.bravobest.binterface.org.OrgService;
+import com.bravo.bravobest.binterface.OrgService;
+import com.bravo.bravobest.dao.OrgDao;
 import com.bravo.bravobet.api.entity.Org;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Service
+@Transactional
 public class OrgServiceImpl implements OrgService {
 
+    @Autowired
+    private OrgDao orgDao;
 
     @Override
     public List<Org> queryList(Map<String, Object> pmap) throws Exception {
@@ -25,6 +32,9 @@ public class OrgServiceImpl implements OrgService {
 
     @Override
     public Org queryOne(Map<String, Object> pmap) throws Exception {
-        return null;
+        Map<String, Object> map = new HashMap<>();
+        map.put("orgNo","1");
+        Org org = orgDao.queryOne(map);
+        return org;
     }
 }

@@ -1,6 +1,7 @@
-package com.bravo.bravobest.binterface.user;
+package com.bravo.bravobest.binterface;
 
 import com.bravo.bravobet.api.entity.User;
+
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    List<User> queryList(Map<String,Object> pmap) throws Exception;
+    List<User> queryList(Map<String, Object> pmap) throws Exception;
 
     /**
      * 查询单个人员
@@ -21,5 +22,5 @@ public interface UserService {
      * @return
      * @throws Exception
      */
-    User queryOne(Map<String,Object> pmap) throws Exception;
+    User queryOne(Map<String, Object> pmap) throws Exception;
 }

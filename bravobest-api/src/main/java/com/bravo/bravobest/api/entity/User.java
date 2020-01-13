@@ -1,4 +1,4 @@
-package com.bravo.bravobet.api.entity;
+package com.bravo.bravobest.api.entity;
 
 import java.io.Serializable;
 

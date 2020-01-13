@@ -1,6 +1,6 @@
 package com.bravo.bravobest.binterface;
 
-import com.bravo.bravobet.api.entity.User;
+import com.bravo.bravobest.api.entity.User;
 
 import java.util.List;
 import java.util.Map;

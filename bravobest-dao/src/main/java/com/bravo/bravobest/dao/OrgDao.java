@@ -1,6 +1,6 @@
 package com.bravo.bravobest.dao;
 
-import com.bravo.bravobet.api.entity.Org;
+import com.bravo.bravobest.api.entity.Org;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

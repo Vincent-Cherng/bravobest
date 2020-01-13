@@ -1,7 +1,10 @@
 package com.bravo.bravobest.web;
 
 import com.bravo.bravobest.binterface.UserService;
-import com.bravo.bravobet.api.entity.User;
+import com.bravo.bravobest.api.entity.User;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +15,7 @@ import java.util.Map;
 
 @RequestMapping("/user")
 @RestController
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -19,6 +23,7 @@ public class UserController {
 
     @RequestMapping("/hello")
     public String test1() throws Exception {
+        log.error("hello slf4j");
         Map<String,Object> map = new HashMap<>();
         List<User> users = userService.queryList(map);
         return "hello bravo";

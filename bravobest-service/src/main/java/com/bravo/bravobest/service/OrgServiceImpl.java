@@ -2,7 +2,7 @@ package com.bravo.bravobest.service;
 
 import com.bravo.bravobest.binterface.OrgService;
 import com.bravo.bravobest.dao.OrgDao;
-import com.bravo.bravobet.api.entity.Org;
+import com.bravo.bravobest.api.entity.Org;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

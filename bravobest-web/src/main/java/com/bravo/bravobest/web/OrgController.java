@@ -2,12 +2,11 @@ package com.bravo.bravobest.web;
 
 
 import com.bravo.bravobest.binterface.OrgService;
-import com.bravo.bravobet.api.entity.Org;
+import com.bravo.bravobest.api.entity.Org;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/org")

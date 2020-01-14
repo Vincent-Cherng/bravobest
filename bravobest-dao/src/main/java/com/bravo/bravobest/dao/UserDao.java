@@ -1,6 +1,7 @@
 package com.bravo.bravobest.dao;
 
 import com.bravo.bravobest.api.entity.User;
+import com.bravo.bravobest.common.page.Pager;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,15 @@ public interface UserDao {
      * @throws Exception
      */
     List<User> queryList(Map<String, Object> pmap) throws Exception;
+
+    /**
+     * 查询list分页
+     * @param pager
+     * @return
+     * @throws Exception
+     */
+    List<User> queryList(Pager pager) throws Exception;
+
 
     /**
      * 查询

@@ -1,6 +1,7 @@
 package com.bravo.bravobest.service;
 
 import com.bravo.bravobest.binterface.UserService;
+import com.bravo.bravobest.common.page.Pager;
 import com.bravo.bravobest.dao.UserDao;
 import com.bravo.bravobest.api.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,8 @@ public class UserServiceImpl implements UserService {
         user.setUserName("老铁");
         user.setPassword("123");
         user.setLoginName("234");
-        int i = userDao.doSave(user);
+        List<User> users = userDao.queryList(new Pager());
+        System.out.println(users);
         return null;
     }
 

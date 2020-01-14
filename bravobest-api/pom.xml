@@ -37,11 +37,6 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>com.bravo</groupId>
-            <artifactId>bravobest-common</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>

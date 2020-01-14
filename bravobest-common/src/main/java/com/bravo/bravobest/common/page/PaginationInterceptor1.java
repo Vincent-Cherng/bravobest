@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * 分页拦截器
+ * 分页拦截器(未用)
  */
 @Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class , Integer.class}) })
 @Slf4j

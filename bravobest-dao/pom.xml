@@ -38,8 +38,14 @@
 
         <dependency>
             <groupId>com.bravo</groupId>
+            <artifactId>bravobest-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bravo</groupId>
             <artifactId>bravobest-api</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

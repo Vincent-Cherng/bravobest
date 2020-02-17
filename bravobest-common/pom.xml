@@ -36,6 +36,10 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>com.bravo</groupId>
+            <artifactId>bravobest-api</artifactId>
+        </dependency>
 
         <!--引入mybatis，为了分页将mybatis移到common模块中-->
         <dependency>
@@ -49,6 +53,12 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!--StringUtils工具包-->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
     </dependencies>
 
     <build>

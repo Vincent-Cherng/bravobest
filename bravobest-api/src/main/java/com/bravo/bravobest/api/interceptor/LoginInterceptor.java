@@ -27,6 +27,10 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String requestURI = request.getRequestURI();
+        StringBuffer requestURL = request.getRequestURL();
+        System.out.println(requestURI);
+        System.out.println(requestURL);
         Object user = request.getSession().getAttribute("user");
         if(user == null || !(user instanceof User)){
             response.setCharacterEncoding("UTF-8");

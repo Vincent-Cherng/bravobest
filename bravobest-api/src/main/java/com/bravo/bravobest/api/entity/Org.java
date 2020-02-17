@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 public class Org implements Serializable {
 
+    private static final long serialVersionUID = -8708525144902181786L;
+
+
     private String orgNo;
 
     private String orgName;

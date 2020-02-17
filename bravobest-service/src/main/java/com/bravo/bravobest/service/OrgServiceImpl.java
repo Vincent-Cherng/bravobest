@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 @Service
 @Transactional
@@ -35,6 +36,9 @@ public class OrgServiceImpl implements OrgService {
         Map<String, Object> map = new HashMap<>();
         map.put("orgNo","1");
         Org org = orgDao.queryOne(map);
+
+
+
         return org;
     }
 }

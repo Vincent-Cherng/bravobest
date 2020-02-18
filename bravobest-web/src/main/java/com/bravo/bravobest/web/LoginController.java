@@ -1,8 +1,10 @@
 package com.bravo.bravobest.web;
 
 import com.bravo.bravobest.api.entity.ResultData;
+import com.bravo.bravobest.binterface.UserService;
 import com.bravo.bravobest.common.util.ResultUtils;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class LoginController {
 
+    @Autowired
+    private UserService userService;
 
 //    @CrossOrigin
     @RequestMapping("login")
@@ -23,6 +27,7 @@ public class LoginController {
         /*if (StringUtils.isBlank(checkCode)) {
             return ResultUtils.fail("验证码必填！");
         }*/
+
         if ("admin".equals(userName) && "admin".equals(password)) {
             return ResultUtils.success("登录成功！");
         }

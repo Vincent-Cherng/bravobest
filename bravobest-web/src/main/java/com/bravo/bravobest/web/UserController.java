@@ -15,16 +15,18 @@ import java.util.Map;
 
 @RequestMapping("/user")
 @RestController
-@Slf4j
+//@Slf4j
 public class UserController {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     private UserService userService;
 
     @RequestMapping("/hello")
     public String test1() throws Exception {
-        log.error("hello slf4j");
-        log.error("hello slf4j");
+        logger.error("hello slf4j");
+        logger.error("hello slf4j");
         Map<String,Object> map = new HashMap<>();
         List<User> users = userService.queryList(map);
         return "hello bravo";

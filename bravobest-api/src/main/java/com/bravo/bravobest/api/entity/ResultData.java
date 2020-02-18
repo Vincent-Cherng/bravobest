@@ -7,31 +7,50 @@ import java.io.Serializable;
  */
 public class ResultData implements Serializable {
 
+
+    public static final Integer DEFAULT_SUCCESS_CODE = 0;
+    public static final Integer DEFAULT_FAIL_CODE = -1;
+
     private static final long serialVersionUID = 8720470665989721869L;
 
-    private int resultCode;//返回编码
+    private int code;//返回信息编码
 
-    private String resultMessage;//返回消息
+    private String message;//返回信息提示
 
+    private Object data;//返回的实际数据
 
-    public ResultData(int resultCode,String resultMessage) {
-        this.resultCode = resultCode;
-        this.resultMessage = resultMessage;
+    public ResultData(int code,String message,Object data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
     }
 
-    public int getResultCode() {
-        return resultCode;
+    public ResultData(int code,String message) {
+        this.code = code;
+        this.message = message;
     }
 
-    public void setResultCode(int resultCode) {
-        this.resultCode = resultCode;
+    public int getCode() {
+        return code;
     }
 
-    public String getResultMessage() {
-        return resultMessage;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public void setResultMessage(String resultMessage) {
-        this.resultMessage = resultMessage;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }

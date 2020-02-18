@@ -17,7 +17,7 @@ public class LoginController {
 
 //    @CrossOrigin
     @RequestMapping("login")
-    public ResultData login(String loginName, String password, String checkCode) {
+    public ResultData login(String loginName, String password, String checkCode) throws Exception {
         if (StringUtils.isBlank(loginName)) {
             return ResultUtils.fail("用户名必填！");
         }
@@ -27,6 +27,8 @@ public class LoginController {
         /*if (StringUtils.isBlank(checkCode)) {
             return ResultUtils.fail("验证码必填！");
         }*/
+        ResultData resultData = userService.queryOneByLoginName(loginName);
+        resultData.getCode();
         if ("admin".equals(loginName) && "admin".equals(password)) {
             return ResultUtils.success("登录成功！");
         }

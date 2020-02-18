@@ -28,7 +28,7 @@ public class UserController {
         logger.error("hello slf4j");
         logger.error("hello slf4j");
         Map<String,Object> map = new HashMap<>();
-        List<User> users = userService.queryList(map);
+//        List<User> users = userService.queryList(map);
         return "hello bravo";
     }
 }

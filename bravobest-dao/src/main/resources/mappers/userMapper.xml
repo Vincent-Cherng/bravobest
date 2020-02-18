@@ -25,11 +25,18 @@
         SELECT
         <include refid="Base_Column_List"/>
         FROM user
-        WHERE user_no = #{userNo}
+        <where>
+            <if test="userNo != null and userNo != ''">
+                user_no = #{userNo}
+            </if>
+            <if test="loginName != null and loginName != ''">
+                and login_name = #{loginName}
+            </if>
+        </where>
     </select>
 
     <insert id="doSave" parameterType="com.bravo.bravobest.api.entity.User">
-        insert into user (user_no, user_name, password, login_name, sex, org_no)
+        insert into user (<include refid="Base_Column_List"/>)
                 value (
                     #{userNo,jdbcType=VARCHAR},
                     #{userName,jdbcType=VARCHAR},

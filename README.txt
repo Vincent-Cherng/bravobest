@@ -83,9 +83,9 @@ create table perform_evalution_detail
 -- auto-generated definition
 create table perform_evalution_standard_cfg
 (
-    standard_no    varchar(10) not null comment '评分标准编号',
+    standard_no    varchar(100) not null comment '评分标准编号',
     standard_name  varchar(50) not null comment '评分标准名称',
-    standard_type  varchar(10) null comment '类型',
+    standard_type  varchar(100) null comment '类型',
     standard_point varchar(10) not null comment '分数定额',
     is_enabled     varchar(4)  null comment '是否启用',
     create_no      varchar(20) null,

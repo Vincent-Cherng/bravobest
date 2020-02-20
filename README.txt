@@ -90,7 +90,7 @@ create table perform_evalution_standard_cfg
     is_enabled     varchar(4)  null comment '是否启用',
     create_no      varchar(20) null,
     create_time    varchar(20) null,
-    evalution_type varchar(10) not null comment '考评类型'
+    evalution_type varchar(10) not null comment '考评类型',
     description    varchar(1000)        comment '描述'
 )
     comment '评分标准的配置表';

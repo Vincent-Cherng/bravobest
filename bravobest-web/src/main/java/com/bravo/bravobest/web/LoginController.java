@@ -27,9 +27,9 @@ public class LoginController {
         if (StringUtils.isBlank(password)) {
             return ResultUtils.fail(-2,"密码必填！");
         }
-        if (StringUtils.isBlank(checkCode)) {
+        /*if (StringUtils.isBlank(checkCode)) {
             return ResultUtils.fail(-2,"验证码必填！");
-        }
+        }*/
         ResultData resultData = userService.queryOneByLoginName(loginName);
         if (resultData.getCode() != ResultData.DEFAULT_SUCCESS_CODE){
             return ResultUtils.fail(-1,"登录失败！");

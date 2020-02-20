@@ -5,7 +5,7 @@
     <resultMap id="BaseResultMap" type="com.bravo.bravobest.api.entity.User">
         <id column="user_no" property="userNo" jdbcType="VARCHAR" />
         <result column="user_name" property="userName" jdbcType="VARCHAR" />
-        <result column="password" property="password" jdbcType="VARCHAR" />
+<!--        <result column="password" property="password" jdbcType="VARCHAR" />-->
         <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
         <result column="sex" property="sex" jdbcType="VARCHAR" />
         <result column="org_no" property="orgNo" jdbcType="VARCHAR" />

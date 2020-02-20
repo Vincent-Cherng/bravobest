@@ -1,11 +1,14 @@
 package com.bravo.bravobest.web;
 
 import com.bravo.bravobest.api.entity.ResultData;
+import com.bravo.bravobest.api.entity.User;
 import com.bravo.bravobest.binterface.UserService;
 import com.bravo.bravobest.common.util.ResultUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import javax.servlet.http.HttpServletRequest;
 
 
 @RequestMapping("/")
@@ -17,22 +20,35 @@ public class LoginController {
 
 //    @CrossOrigin
     @RequestMapping("login")
-    public ResultData login(String loginName, String password, String checkCode) throws Exception {
+    public ResultData login(HttpServletRequest req,String loginName, String password, String checkCode) throws Exception {
         if (StringUtils.isBlank(loginName)) {
-            return ResultUtils.fail("用户名必填！");
+            return ResultUtils.fail(-2,"用户名必填！");
         }
         if (StringUtils.isBlank(password)) {
-            return ResultUtils.fail("密码必填！");
+            return ResultUtils.fail(-2,"密码必填！");
         }
-        /*if (StringUtils.isBlank(checkCode)) {
-            return ResultUtils.fail("验证码必填！");
-        }*/
+        if (StringUtils.isBlank(checkCode)) {
+            return ResultUtils.fail(-2,"验证码必填！");
+        }
         ResultData resultData = userService.queryOneByLoginName(loginName);
-        resultData.getCode();
-        if ("admin".equals(loginName) && "admin".equals(password)) {
-            return ResultUtils.success("登录成功！");
+        if (resultData.getCode() != ResultData.DEFAULT_SUCCESS_CODE){
+            return ResultUtils.fail(-1,"登录失败！");
         }
-        return ResultUtils.fail();
+        User user = (User)resultData.getData();
+        if (user == null) {
+            return ResultUtils.fail(-3,"用户登录名不存在！");
+        }
+        if (!password.equals(user.getPassword())) {
+            return ResultUtils.fail(-4,"用户密码输入错误！");
+        }
+        req.getSession().setAttribute("user",user);
+        return ResultUtils.success(user);
     }
 
+
+    @RequestMapping("logOut")
+    public ResultData logout(HttpServletRequest req){
+        req.getSession().removeAttribute("user");
+        return ResultUtils.success();
+    }
 }

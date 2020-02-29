@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
         Map<String, Object> map = new HashMap<>();
         map.put("loginName",loginName);
         try {
-            User user = userDao.queryOne(map);
+            User user = userDao.queryOneWithPassword(map);
             return ResultUtils.success(user);
         } catch (Exception e) {
             e.printStackTrace();

@@ -96,7 +96,3 @@ create table perform_evalution_standard_cfg
     comment '评分标准的配置表';
 
 
-
-
-
-

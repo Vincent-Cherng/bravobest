@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bravo.bravobest.dao.MenuDao">
+
+    <resultMap id="menuBaseResultMap" type="com.bravo.bravobest.api.entity.Menu">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="path" property="path" jdbcType="VARCHAR"/>
+        <result column="component" property="component" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="iconCls" property="iconCls" jdbcType="VARCHAR"/>
+        <result column="keepAlive" property="keepAlive" jdbcType="INTEGER"/>
+        <result column="requireAuth" property="requireAuth" jdbcType="INTEGER"/>
+        <result column="parentId" property="parentId" jdbcType="INTEGER"/>
+        <result column="enabled" property="enabled" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap id="menuAndSubResultMap" type="com.bravo.bravobest.api.entity.Menu">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="path" property="path" jdbcType="VARCHAR"/>
+        <result column="component" property="component" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="iconCls" property="iconCls" jdbcType="VARCHAR"/>
+        <result column="keepAlive" property="keepAlive" jdbcType="INTEGER"/>
+        <result column="requireAuth" property="requireAuth" jdbcType="INTEGER"/>
+        <result column="component2" property="component2" jdbcType="VARCHAR"/>
+        <result column="iconCls2" property="iconCls2" jdbcType="VARCHAR"/>
+        <result column="keepAlive2" property="keepAlive2" jdbcType="INTEGER"/>
+        <result column="name2" property="name2" jdbcType="VARCHAR"/>
+        <result column="path2" property="path2" jdbcType="VARCHAR"/>
+        <result column="requireAuth2" property="requireAuth2" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="queryMenu" parameterType="java.lang.String" resultMap="menuAndSubResultMap">
+            select m1.id,
+                   m1.path,
+                   m1.component,
+                   m1.iconCls,
+                   m1.name,
+                   m1.requireAuth,
+                   m2.id            m2Id,
+                   m2.component   as component2,
+                   m2.iconCls     as iconCls2,
+                   m2.keepAlive   as keepAlive2,
+                   m2.name        as name2,
+                   m2.path        as path2,
+                   m2.requireAuth as requireAuth2
+            from menu m1,
+                 menu m2
+            where m1.id = m2.parentId
+              and m1.id != 1
+              and m2.id in (select mr.mid
+                              from user_role ur ,
+                                   menu_role mr
+                              where ur.roleid = mr.rid
+                                and ur.userno = #{userNo})
+              and m2.enabled=1 order by m1.id,m2.id
+    </select>
+
+</mapper>

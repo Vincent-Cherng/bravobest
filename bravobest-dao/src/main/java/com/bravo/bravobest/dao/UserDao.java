@@ -35,6 +35,14 @@ public interface UserDao {
     User queryOne(Map<String, Object> pmap) throws Exception;
 
     /**
+     * 查询
+     * @param pmap
+     * @return
+     * @throws Exception
+     */
+    User queryOneWithPassword(Map<String, Object> pmap) throws Exception;
+
+    /**
      * 新增人员
      * @param user
      * @return

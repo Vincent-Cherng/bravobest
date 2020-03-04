@@ -33,6 +33,27 @@
         </where>
     </select>
 
+    <select id="queryUnEvaluatePerson"  resultMap="BaseResultMap">
+        SELECT user_no,
+        user_name,
+        login_name,
+        sex,
+        o.org_no,
+        o.org_name
+        FROM user u
+        left join org o on u.org_no = o.org_no
+        <where>
+            and o.org_no = #{orgNo}
+            and u.user_no not in
+            (select p.user_no from perform_evaluation p
+                where p.evalution_period = #{evaluationPeriod} and p.evalution_person = #{userNo})
+            <![CDATA[
+                and u.user_no <> #{userNo}
+            ]]>
+        </where>
+    </select>
+
+
     <select id="queryOne" parameterType="java.util.Map" resultMap="BaseResultMap" >
         SELECT
         <include refid="Base_Column_List"/>

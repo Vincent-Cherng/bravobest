@@ -18,6 +18,13 @@ public interface UserDao {
      */
     List<User> queryList(Map<String, Object> pmap) throws Exception;
 
+    /**
+     * 查询当前登录人还没未考评的人
+     * @param pmap
+     * @return
+     * @throws Exception
+     */
+    List<User> queryUnEvaluatePerson(Map<String, Object> pmap) throws Exception;
 
     /**
      * 查询
@@ -42,4 +49,6 @@ public interface UserDao {
      * @throws Exception
      */
     int doSave(User user) throws Exception;
+
+
 }

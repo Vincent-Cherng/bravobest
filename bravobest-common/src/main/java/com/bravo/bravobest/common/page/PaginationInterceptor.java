@@ -4,13 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.parameter.ParameterHandler;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;
-import org.apache.ibatis.mapping.ParameterMapping;
 import org.apache.ibatis.plugin.*;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
-
-import java.sql.*;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Map;
 import java.util.Properties;
 
@@ -53,8 +53,8 @@ public class PaginationInterceptor implements Interceptor {
         pager.setTotalRecord(count);
         // 拼接分页语句
         String pageSql = boundSql.getSql() + " limit " +
-                ((pager.getPage() - 1) * pager.getRows()) +
-                ", " + pager.getRows();
+                ((pager.getCurrentPage() - 1) * pager.getPageSize()) +
+                ", " + pager.getPageSize();
         metaObject.setValue("delegate.boundSql.sql", pageSql);
         return invocation.proceed();
     }

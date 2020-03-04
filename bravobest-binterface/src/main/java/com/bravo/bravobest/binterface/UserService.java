@@ -17,6 +17,14 @@ public interface UserService {
     ResultData queryList(Map<String, Object> pmap) throws Exception;
 
     /**
+     * 查询当前登录人还没未考评的人
+     * @param pmap
+     * @return
+     * @throws Exception
+     */
+    ResultData queryUnEvaluatePerson(Map<String, Object> pmap) throws Exception;
+
+    /**
      * 根据登录名查询单个人员
      * @param loginName
      * @return

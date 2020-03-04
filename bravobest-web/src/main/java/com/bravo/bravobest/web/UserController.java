@@ -1,10 +1,9 @@
 package com.bravo.bravobest.web;
 
 import com.bravo.bravobest.api.entity.ResultData;
-import com.bravo.bravobest.binterface.UserService;
 import com.bravo.bravobest.api.entity.User;
+import com.bravo.bravobest.binterface.UserService;
 import com.bravo.bravobest.common.base.BaseController;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/user")
@@ -27,18 +25,18 @@ public class UserController extends BaseController {
     private UserService userService;
 
     /**
-     * 查询同一部门下的用户
+     * 查询同一部门下还没考评过的用户
      * @return
      * @throws Exception
      */
     @RequestMapping("/queryUsersInOrg")
-    public ResultData queryUsersInOrg(HttpServletRequest req) throws Exception {
-        Map<String,Object> map = new HashMap<>();
+    public ResultData queryUsersInOrg(HttpServletRequest req,String evaluationPeriod) throws Exception {
+        Map<String, Object> map = super.requestToMap(req, new String[]{"currentPage", "pageSize"});
         User curUser = super.getCurUser(req);
         map.put("orgNo",curUser.getOrgNo());
         map.put("userNo",curUser.getUserNo());
-        map.put("excludeOneSelf","Y");
-        ResultData resultData = userService.queryList(map);
+        map.put("evaluationPeriod",evaluationPeriod);
+        ResultData resultData = userService.queryUnEvaluatePerson(map);
         return resultData;
     }
 }

@@ -8,10 +8,6 @@ import java.util.Map;
 
 public interface UserService {
 
-
-
-
-
     /**
      * 查询人员列表
      * @param pmap

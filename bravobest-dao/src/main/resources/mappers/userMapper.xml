@@ -9,6 +9,7 @@
         <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
         <result column="sex" property="sex" jdbcType="VARCHAR" />
         <result column="org_no" property="orgNo" jdbcType="VARCHAR" />
+        <result column="org_name" property="orgName" jdbcType="VARCHAR" />
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -17,8 +18,19 @@
 
     <select id="queryList" resultMap="BaseResultMap">
         SELECT
-        <include refid="Base_Column_List"/>
-        FROM user
+        user_no, user_name, login_name, sex, o.org_no ,o.org_name
+        FROM user u
+        left join org o on u.org_no = o.org_no
+        <where>
+            <if test="orgNo != null and orgNo != ''">
+                and o.org_no = #{orgNo}
+            </if>
+            <if test="excludeOneSelf != null and excludeOneSelf != '' and excludeOneSelf == 'Y'.toString()">
+                <![CDATA[
+                    and u.user_no <> #{userNo}
+                ]]>
+            </if>
+        </where>
     </select>
 
     <select id="queryOne" parameterType="java.util.Map" resultMap="BaseResultMap" >

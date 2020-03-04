@@ -28,14 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResultData queryList(Map<String, Object> pmap) throws Exception {
-        User user = new User();
-        user.setUserNo("1234");
-        user.setUserName("老铁");
-        user.setPassword("123");
-        user.setLoginName("234");
-        List<User> users = userDao.queryList(new Pager());
-        System.out.println(users);
-        return null;
+        pmap.put("pager",new Pager());
+        List<User> users = userDao.queryList(pmap);
+        return ResultUtils.success(users);
     }
 
     @Override

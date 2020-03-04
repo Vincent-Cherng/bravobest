@@ -13,6 +13,8 @@ public class User implements Serializable {
 
     private String orgNo;
 
+    private String orgName;
+
     private String userName;
 
     private String loginName;
@@ -56,6 +58,14 @@ public class User implements Serializable {
 
     public void setOrgNo(String orgNo) {
         this.orgNo = orgNo;
+    }
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
     }
 
     public String getUserName() {

@@ -15,24 +15,42 @@
         <result column="enabled" property="enabled" jdbcType="INTEGER"/>
     </resultMap>
 
-    <resultMap id="menuAndSubResultMap" type="com.bravo.bravobest.api.entity.Menu">
+    <resultMap id="BaseResultMap" type="com.bravo.bravobest.api.entity.Menu">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="url" property="url" jdbcType="VARCHAR"/>
         <result column="path" property="path" jdbcType="VARCHAR"/>
-        <result column="component" property="component" jdbcType="VARCHAR"/>
+        <result column="component" property="component" javaType="java.lang.Object"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="iconCls" property="iconCls" jdbcType="VARCHAR"/>
         <result column="keepAlive" property="keepAlive" jdbcType="INTEGER"/>
-        <result column="requireAuth" property="requireAuth" jdbcType="INTEGER"/>
-        <result column="component2" property="component2" jdbcType="VARCHAR"/>
-        <result column="iconCls2" property="iconCls2" jdbcType="VARCHAR"/>
-        <result column="keepAlive2" property="keepAlive2" jdbcType="INTEGER"/>
-        <result column="name2" property="name2" jdbcType="VARCHAR"/>
-        <result column="path2" property="path2" jdbcType="VARCHAR"/>
-        <result column="requireAuth2" property="requireAuth2" jdbcType="INTEGER"/>
+        <result column="parentId" property="parentId" jdbcType="INTEGER"/>
+        <!--<association property="meta" javaType="org.sang.bean.MenuMeta">
+            <result column="keepAlive" property="keepAlive"/>
+            <result column="requireAuth" property="requireAuth"/>
+        </association>-->
+        <!--<collection property="roles" ofType="org.sang.bean.Role">
+            <id column="rid" property="id"/>
+            <result column="rname" property="name"/>
+            <result column="rnamezh" property="nameZh"/>
+        </collection>-->
+        <collection property="children" ofType="com.bravo.bravobest.api.entity.Menu">
+            <id column="id2" property="id"/>
+            <result column="path2" property="path" jdbcType="VARCHAR"/>
+            <result column="component2" property="component" jdbcType="VARCHAR"/>
+            <result column="name2" property="name" jdbcType="VARCHAR"/>
+            <result column="iconCls2" property="iconCls" jdbcType="VARCHAR"/>
+            <!--<association property="meta" javaType="org.sang.bean.MenuMeta">
+                <result column="keepAlive2" property="keepAlive"/>
+                <result column="requireAuth2" property="requireAuth"/>
+            </association>-->
+            <collection property="children" ofType="com.bravo.bravobest.api.entity.Menu">
+                <id column="id3" property="id"/>
+                <result column="name3" property="name" jdbcType="VARCHAR"/>
+            </collection>
+        </collection>
     </resultMap>
 
-    <select id="queryMenu" parameterType="java.lang.String" resultMap="menuAndSubResultMap">
+    <select id="queryMenu" parameterType="java.lang.String" resultMap="BaseResultMap">
             select m1.id,
                    m1.path,
                    m1.component,

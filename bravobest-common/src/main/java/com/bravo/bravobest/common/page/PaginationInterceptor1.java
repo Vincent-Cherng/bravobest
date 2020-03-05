@@ -182,20 +182,20 @@ public class PaginationInterceptor1 implements Interceptor {
 
 
     public String getPageSql(String sql, Pager pager) {
-        if(pager.getPage()<=0){
-            pager.setPage(1);
+        if(pager.getCurrentPage() <= 0){
+            pager.setCurrentPage(1);
         }
-        if(pager.getRows()<=0){
-            pager.setRows(20);
+        if(pager.getPageSize() <= 0){
+            pager.setPageSize(10);
         }
-        int startRow = (pager.getPage()-1)* pager.getRows();
+        int startRow = (pager.getCurrentPage() - 1)* pager.getPageSize();
 
-        if(startRow>= pager.getTotalRecord()){
-            pager.setPage(1);
-            startRow=0;
+        if(startRow >= pager.getTotalRecord()){
+            pager.setCurrentPage(1);
+            startRow = 0;
         }
         if("mysql".equals(dialect)){
-            return sql+" limit "+startRow+", "+ pager.getRows();
+            return sql+" limit "+startRow+", "+ pager.getPageSize();
         }
         return sql;
     }

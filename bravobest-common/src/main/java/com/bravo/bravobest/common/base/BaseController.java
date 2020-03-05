@@ -42,21 +42,11 @@ public class BaseController {
         for (String param : paramStr) {
             if (StringUtils.isNotBlank(param)){
                 if("currentPage".equals(param)) {
-                    Pager pager = null;
-                    if(map.containsKey("pager")){
-                        pager = (Pager) map.get("pager");
-                    } else {
-                        pager = new Pager();
-                    }
+                    Pager pager = map.containsKey("pager")?(Pager) map.get("pager"):new Pager();
                     pager.setCurrentPage(Integer.parseInt(req.getParameter(param)));
                     map.put("pager",pager);
                 } else if("pageSize".equals(param)) {
-                    Pager pager = null;
-                    if(map.containsKey("pager")){
-                        pager = (Pager) map.get("pager");
-                    } else {
-                        pager = new Pager();
-                    }
+                    Pager pager = map.containsKey("pager")?(Pager) map.get("pager"):new Pager();
                     pager.setPageSize(Integer.parseInt(req.getParameter(param)));
                     map.put("pager",pager);
                 } else {

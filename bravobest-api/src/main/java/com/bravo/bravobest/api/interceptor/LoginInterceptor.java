@@ -34,13 +34,13 @@ public class LoginInterceptor implements HandlerInterceptor {
         System.out.println(requestURI);
         System.out.println(requestURL);
         Object user = request.getSession().getAttribute("user");
-//        if(user == null || !(user instanceof User)){
-//            response.setCharacterEncoding("UTF-8");
-//            response.setContentType("text/html;charset=UTF-8");
-//            PrintWriter printWriter = response.getWriter();
-//            printWriter.print("登录超时,请重新登录!");
-//            return false;
-//        }
+        if(user == null || !(user instanceof User)){
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html;charset=UTF-8");
+            PrintWriter printWriter = response.getWriter();
+            printWriter.print("登录超时,请重新登录!");
+            return false;
+        }
         return true;
     }
 

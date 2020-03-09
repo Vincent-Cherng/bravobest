@@ -3,6 +3,7 @@ package com.bravo.bravobest.service;
 import com.bravo.bravobest.api.entity.ResultData;
 import com.bravo.bravobest.binterface.UserService;
 import com.bravo.bravobest.common.base.BaseService;
+import com.bravo.bravobest.common.exception.BravoBestException;
 import com.bravo.bravobest.common.page.Pager;
 import com.bravo.bravobest.common.util.ResultUtils;
 import com.bravo.bravobest.dao.UserDao;
@@ -36,7 +37,6 @@ public class UserServiceImpl extends BaseService implements UserService {
 
     @Override
     public ResultData queryUnEvaluatePerson(Map<String, Object> pmap) throws Exception {
-        pmap.put("pager",new Pager());
         List<User> users = userDao.queryUnEvaluatePerson(pmap);
         Map<String, Object> rMap = super.buildPagination(pmap, users);
         return ResultUtils.success(rMap);

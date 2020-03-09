@@ -1,16 +1,19 @@
 package com.bravo.bravobest.api.entity;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
-//@lo
+
 public class User implements Serializable {
 
 
     private static final long serialVersionUID = -7600704042107657771L;
 
-
+    @NotBlank(message = "用户编号不能为空！")
     private String userNo;
 
+    @NotEmpty(message = "用户所属部门不能为空！")
     private String orgNo;
 
     private String orgName;

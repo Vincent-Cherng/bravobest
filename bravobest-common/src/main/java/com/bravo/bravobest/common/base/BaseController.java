@@ -42,12 +42,22 @@ public class BaseController {
         for (String param : paramStr) {
             if (StringUtils.isNotBlank(param)){
                 if("currentPage".equals(param)) {
+                    /*map.compute("pager",(k,v) -> {
+                        Pager newValue;
+                        if(v == null){
+                            newValue = new Pager();
+                        } else {
+                            newValue = (Pager) v;
+                            newValue.setCurrentPage(Integer.parseInt(req.getParameter(param)));
+                        }
+                        return newValue;
+                    });*/
                     Pager pager = map.containsKey("pager")?(Pager) map.get("pager"):new Pager();
-                    pager.setCurrentPage(Integer.parseInt(req.getParameter(param)));
+                    pager.setCurrentPage(Integer.parseInt(req.getParameter(param)==null?"1":req.getParameter(param)));
                     map.put("pager",pager);
                 } else if("pageSize".equals(param)) {
                     Pager pager = map.containsKey("pager")?(Pager) map.get("pager"):new Pager();
-                    pager.setPageSize(Integer.parseInt(req.getParameter(param)));
+                    pager.setPageSize(Integer.parseInt(req.getParameter(param)==null?"10":req.getParameter(param)));
                     map.put("pager",pager);
                 } else {
                     String paramValue = req.getParameter(param);
@@ -58,4 +68,11 @@ public class BaseController {
         return map;
     }
 
+
+    public static void main(String[] args) {
+        Map<Object, String> map = new HashMap<>();
+        map.compute("s",(k,v) -> v);
+
+        System.out.println(map);
+    }
 }

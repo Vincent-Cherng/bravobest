@@ -26,7 +26,8 @@ public class BravoWebConfigurer implements WebMvcConfigurer {
         registry.addInterceptor(loginInterceptor).addPathPatterns("/**")
                 .excludePathPatterns("/**/login"
                         , "/**/register"
-                        ,"/**/error");
+                        ,"/**/error"
+                        ,"/**/code");
     }
 
 }

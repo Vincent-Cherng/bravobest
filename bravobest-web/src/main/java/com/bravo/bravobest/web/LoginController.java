@@ -22,6 +22,9 @@ import java.io.OutputStream;
 @RestController
 public class LoginController {
 
+    public static final String VALIDATE_CODE_KEY = "bravo_XX_checkCode";
+
+
     @Autowired
     private UserService userService;
 
@@ -37,7 +40,7 @@ public class LoginController {
         if (StringUtils.isBlank(checkCode)) {
             return ResultUtils.fail(-2,"验证码必填！");
         }
-        String code = (String)req.getSession().getAttribute("bravo_XX_checkCode");
+        String code = (String)req.getSession().getAttribute(VALIDATE_CODE_KEY);
         if(!checkCode.equalsIgnoreCase(code)){
             return ResultUtils.fail(-3,"验证码错误！");
         }
@@ -66,7 +69,7 @@ public class LoginController {
     public void code(HttpServletRequest req, HttpServletResponse res){
         ValidateCode vCode = new ValidateCode(160,40,4,50);
         //验证码放入session中
-        req.getSession().setAttribute("bravo_XX_checkCode",vCode.getCode());
+        req.getSession().setAttribute(VALIDATE_CODE_KEY,vCode.getCode());
         BufferedImage codeImg = vCode.getBuffImg();
 //        BufferedImage buffImg = ImageIO.read(new FileInputStream("home/images/test.png"));
         OutputStream outputStream = null;

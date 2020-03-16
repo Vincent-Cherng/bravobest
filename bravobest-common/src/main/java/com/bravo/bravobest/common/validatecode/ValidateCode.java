@@ -128,7 +128,6 @@ public class ValidateCode {
             // 将产生的四个随机数组合在一起。
             randomCode.append(strRand);
         }
-        // 将四位数字的验证码保存到Session中。
         code = randomCode.toString();
     }
 

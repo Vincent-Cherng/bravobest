@@ -29,7 +29,7 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String requestURI = request.getRequestURI();
+       /* String requestURI = request.getRequestURI();
         StringBuffer requestURL = request.getRequestURL();
         System.out.println(requestURI);
         System.out.println(requestURL);
@@ -40,7 +40,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             PrintWriter printWriter = response.getWriter();
             printWriter.print("登录超时,请重新登录!");
             return false;
-        }
+        }*/
         return true;
     }
 

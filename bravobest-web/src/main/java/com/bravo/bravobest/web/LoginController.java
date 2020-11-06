@@ -28,6 +28,13 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/test")
+    public String test(){
+        String a = "iiiiiii";
+        System.out.println(a);
+        return a;
+    }
+
 //    @CrossOrigin
     @RequestMapping("login")
     public ResultData login(HttpServletRequest req,String loginName, String password, String checkCode) throws Exception {

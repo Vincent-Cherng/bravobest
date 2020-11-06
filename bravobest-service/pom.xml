@@ -12,7 +12,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>bravobest-service</name>
-    <description>Demo project for Spring Boot</description>
+    <description>vicente Cheng Service</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -45,10 +45,6 @@
             <groupId>com.bravo</groupId>
             <artifactId>bravobest-dao</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.bravo</groupId>
-            <artifactId>bravobest-common</artifactId>
-        </dependency>
 
         <!--引入mybatis，为了分页将mybatis移到common模块中-->
         <!--<dependency>
@@ -70,7 +66,39 @@
             <artifactId>druid</artifactId>
         </dependency>
 
+        <!--elasticSearch方式一：ElasticSearch  工具包 start-->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.elasticsearch.client</groupId>
+                    <artifactId>elasticsearch-rest-client</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+        </dependency>
+        <!--elasticSearch方式一：ElasticSearch  工具包 end-->
 
+
+        <!--elasticSearch方式二：集成包   start  已移动至api项目pom文件里-->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>-->
+        <!--或者-->
+       <!-- <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-elasticsearch</artifactId>
+        </dependency>-->
+        <!--elasticSearch方式二：集成包   end-->
 
     </dependencies>
 

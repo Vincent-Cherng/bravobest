@@ -14,4 +14,6 @@ public interface ESUserService<ESUser> {
     String bulk();
 
     String queryWithPage();
+
+    String search();
 }

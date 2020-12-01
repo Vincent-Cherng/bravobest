@@ -82,8 +82,7 @@ public class BravoBestControllerAdvice {
     @ExceptionHandler({Exception.class})
     public ResultData handleException(Exception e){
         logger.error("全局异常信息");
-        logger.error(e.getMessage());
-        System.out.println(e.getMessage());
+        logger.error(e.getMessage(),e);
         return ResultUtils.fail(DEFAULT_ERROR_MESSAGE);
     }
 

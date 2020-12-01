@@ -6,6 +6,7 @@ import com.bravo.bravobest.esdao.ESUserDao;
 import org.apache.commons.lang.StringUtils;
 import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
 import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
@@ -51,8 +52,8 @@ public class ESUserServiceImpl implements ESUserService<ESUser> {
     @Override
     public String save() {
         ESUser esUser = new ESUser();
-        esUser.setId("6");
-        esUser.setName("萝卜青菜，各有所爱");
+        esUser.setId("4");
+        esUser.setName("我不是美国人，不厉害厉害");
         ESUser save = esUserDao.index(esUser);
         String s = save.toString();
         return s;
@@ -108,6 +109,15 @@ public class ESUserServiceImpl implements ESUserService<ESUser> {
         return "";
     }
 
+    @Override
+    public String search(){
+        MatchQueryBuilder matchQueryBuilder = QueryBuilders.matchQuery("name", "中国");
+        Iterable<ESUser> search = esUserDao.search(matchQueryBuilder);
+        search.forEach(x -> System.out.println(x.getName()));
+        ArrayList array = null;
+        Object o = array.get(0);
+        return "";
+    }
 
 
     //综合搜索

@@ -17,6 +17,8 @@ public class ESUser implements Serializable {
     @Id()
     private String id;
 
+    /*这里ik_max_word是按最细粒度分词，ik_smart是按最粗粒度分词。
+    在搜索的时候用粗粒度，在写入的时候用细粒度。*/
     @Field(type = FieldType.Text , searchAnalyzer = "ik_smart" , analyzer = "ik_max_word")
     private String name;
 

@@ -1,6 +1,5 @@
-package javapractice.reentrantLockTest;
+package javapractice.thread.reentrantLockTest;
 
-import java.time.LocalDate;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

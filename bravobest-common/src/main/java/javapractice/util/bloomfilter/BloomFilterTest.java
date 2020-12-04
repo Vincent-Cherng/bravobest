@@ -1,4 +1,4 @@
-package javapractice.bloomfilter;
+package javapractice.util.bloomfilter;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;

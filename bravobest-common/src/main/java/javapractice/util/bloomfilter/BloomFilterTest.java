@@ -53,7 +53,7 @@ public class BloomFilterTest {
             if (bloomFilter.mightContain(i + "")){
                 System.out.println(i + "不应该在过滤器里，但是却在！");
                 count++;
-            }
+            } 
         }
         System.out.println("不应该在过滤器里，但是却在的个数总共有" + count + "个！");
         System.out.println("不应该在过滤器里，但是却在的个数占总数的比例为" + (double)count/total + "！");

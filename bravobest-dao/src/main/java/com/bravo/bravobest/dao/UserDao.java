@@ -1,5 +1,6 @@
 package com.bravo.bravobest.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.bravo.bravobest.api.entity.User;
 import com.bravo.bravobest.common.page.Pager;
 import org.apache.ibatis.annotations.Param;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public interface UserDao {
+public interface UserDao extends BaseMapper<User> {
 
     /**
      * 查询list

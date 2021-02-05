@@ -46,4 +46,52 @@ public class Org implements Serializable {
                 ", orgChief='" + orgChief + '\'' +
                 '}';
     }
+
+    public static OrgBuilder create(){
+        return new OrgBuilder();
+    }
+
+    public static final class OrgBuilder {
+        private String orgNo;
+        private String orgName;
+        private String orgChief;
+
+        private OrgBuilder() {
+        }
+
+        public static OrgBuilder anOrg() {
+            return new OrgBuilder();
+        }
+
+        public OrgBuilder orgNo(String orgNo) {
+            this.orgNo = orgNo;
+            return this;
+        }
+
+        public OrgBuilder orgName(String orgName) {
+            this.orgName = orgName;
+            return this;
+        }
+
+        public OrgBuilder orgChief(String orgChief) {
+            this.orgChief = orgChief;
+            return this;
+        }
+
+        public Org build() {
+            Org org = new Org();
+            org.setOrgNo(orgNo);
+            org.setOrgName(orgName);
+            org.setOrgChief(orgChief);
+            return org;
+        }
+
+    }
+
+    public static void main(String[] args) {
+//        Org org = Org.create().orgNo("1").orgChief("2").build();
+        Org org = new OrgBuilder().orgNo("1").orgChief("2").build();
+        System.out.println(org);
+
+    }
 }

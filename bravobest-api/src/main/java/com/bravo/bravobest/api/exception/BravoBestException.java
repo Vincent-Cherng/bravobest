@@ -1,4 +1,4 @@
-package com.bravo.bravobest.common.exception;
+package com.bravo.bravobest.api.exception;
 
 public class BravoBestException extends RuntimeException {
 

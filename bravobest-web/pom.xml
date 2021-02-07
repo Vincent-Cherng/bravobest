@@ -42,6 +42,10 @@
             <groupId>com.bravo</groupId>
             <artifactId>bravobest-service</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bravo</groupId>
+            <artifactId>bravobest-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

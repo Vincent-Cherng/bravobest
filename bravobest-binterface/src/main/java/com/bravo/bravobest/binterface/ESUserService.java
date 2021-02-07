@@ -3,7 +3,7 @@ package com.bravo.bravobest.binterface;
 
 public interface ESUserService<ESUser> {
 
-    String query();
+    /*String query();
 
     String save();
 
@@ -15,5 +15,5 @@ public interface ESUserService<ESUser> {
 
     String queryWithPage();
 
-    String search();
+    String search();*/
 }

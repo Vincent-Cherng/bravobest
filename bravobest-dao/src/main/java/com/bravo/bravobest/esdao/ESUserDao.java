@@ -6,7 +6,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 /**
  * ES BOOt的dao接口
  */
-public interface ESUserDao extends ElasticsearchRepository<ESUser,String> {
+public interface ESUserDao /*extends ElasticsearchRepository<ESUser,String>*/ {
 
 
 

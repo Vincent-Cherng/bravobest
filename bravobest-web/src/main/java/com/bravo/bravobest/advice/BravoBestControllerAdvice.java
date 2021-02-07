@@ -1,7 +1,7 @@
-package com.bravo.bravobest.common.advice;
+package com.bravo.bravobest.advice;
 
 import com.bravo.bravobest.api.entity.ResultData;
-import com.bravo.bravobest.common.exception.BravoBestException;
+import com.bravo.bravobest.api.exception.BravoBestException;
 import com.bravo.bravobest.common.util.ResultUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import java.util.List;
-import java.util.Set;
 
 @RestControllerAdvice
 public class BravoBestControllerAdvice {

@@ -163,35 +163,35 @@
     -->
 
     <!-- 为logstash输出的JSON格式的Appender -->
-    <appender name="logstash"
-              class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>127.0.0.1:9250</destination>
-        <!-- 日志输出编码 -->
-        <encoder
-                class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
-            <providers>
-                <timestamp>
-                    <timeZone>UTC</timeZone>
-                </timestamp>
-                <pattern>
-                    <pattern>
-                        {
-                        "time": "%d{yyyy-MM-dd HH:mm:ss}",
-                        "severity": "%level",
-                        "service": "${springAppName:-}",
-                        <!--"trace": "%X{X-B3-TraceId:-}",
-                        "span": "%X{X-B3-SpanId:-}",
-                        "exportable": "%X{X-Span-Export:-}",-->
-                        "pid": "${PID:-}",
-                        "thread": "%thread",
-                        "class": "%logger{40}",
-                        "rest": "%message"
-                        }
-                    </pattern>
-                </pattern>
-            </providers>
-        </encoder>
-    </appender>
+<!--    <appender name="logstash"-->
+<!--              class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+<!--        <destination>127.0.0.1:9250</destination>-->
+<!--        &lt;!&ndash; 日志输出编码 &ndash;&gt;-->
+<!--        <encoder-->
+<!--                class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">-->
+<!--            <providers>-->
+<!--                <timestamp>-->
+<!--                    <timeZone>UTC</timeZone>-->
+<!--                </timestamp>-->
+<!--                <pattern>-->
+<!--                    <pattern>-->
+<!--                        {-->
+<!--                        "time": "%d{yyyy-MM-dd HH:mm:ss}",-->
+<!--                        "severity": "%level",-->
+<!--                        "service": "${springAppName:-}",-->
+<!--                        &lt;!&ndash;"trace": "%X{X-B3-TraceId:-}",-->
+<!--                        "span": "%X{X-B3-SpanId:-}",-->
+<!--                        "exportable": "%X{X-Span-Export:-}",&ndash;&gt;-->
+<!--                        "pid": "${PID:-}",-->
+<!--                        "thread": "%thread",-->
+<!--                        "class": "%logger{40}",-->
+<!--                        "rest": "%message"-->
+<!--                        }-->
+<!--                    </pattern>-->
+<!--                </pattern>-->
+<!--            </providers>-->
+<!--        </encoder>-->
+<!--    </appender>-->
 
 
     <!--开发环境:打印控制台-->
@@ -205,7 +205,7 @@
         <appender-ref ref="INFO_FILE" />
         <appender-ref ref="WARN_FILE" />
         <appender-ref ref="ERROR_FILE" />
-        <appender-ref ref="logstash" />
+<!--        <appender-ref ref="logstash" />-->
     </root>
 
     <!--生产环境:输出到文件-->

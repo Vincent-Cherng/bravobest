@@ -32,7 +32,7 @@ import java.util.Optional;
 public class ESUserServiceImpl implements ESUserService<ESUser> {
 
 
-    //普通查询使用这个
+    /*//普通查询使用这个
     @Autowired
     private ESUserDao esUserDao;
 
@@ -166,7 +166,7 @@ public class ESUserServiceImpl implements ESUserService<ESUser> {
         NativeSearchQuery searchQuery = nativeSearchQueryBuilder.build();
         System.out.println("DSL:{}" + searchQuery.getQuery().toString());
         return esUserDao.search(searchQuery);
-    }
+    }*/
 
     //相关商品推荐
     /*

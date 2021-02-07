@@ -35,7 +35,7 @@ import java.util.Map;
 @RequestMapping("/es")
 public class ESTestController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ESTestController.class);
+    /*private static final Logger logger = LoggerFactory.getLogger(ESTestController.class);
 
     @Autowired
     private RestHighLevelClient client;
@@ -264,7 +264,7 @@ public class ESTestController {
 
         logger.info("ESTestController bulk end");
         return "";
-    }
+    }*/
 
 
 }

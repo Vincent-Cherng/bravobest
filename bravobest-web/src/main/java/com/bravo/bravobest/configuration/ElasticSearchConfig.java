@@ -17,7 +17,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 @Configuration
 public class ElasticSearchConfig {
 
-    @Value("${spring.elasticsearch.address}")
+    /*@Value("${spring.elasticsearch.address}")
     private String address;
 
     @Bean
@@ -29,6 +29,6 @@ public class ElasticSearchConfig {
             httpHosts[i] = new HttpHost(host.split(":")[0],Integer.parseInt(host.split(":")[1]),"http");
         }
         return new RestHighLevelClient(RestClient.builder(httpHosts));
-    }
+    }*/
 
 }

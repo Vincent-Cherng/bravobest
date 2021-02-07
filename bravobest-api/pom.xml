@@ -49,6 +49,11 @@
          </dependency>-->
         <!--elasticSearch方式二：集成包   end-->
 
+        <!--JWT依赖-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

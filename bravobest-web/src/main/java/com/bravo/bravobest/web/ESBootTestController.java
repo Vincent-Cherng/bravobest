@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ESBootTestController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ESBootTestController.class);
+    /*private static final Logger logger = LoggerFactory.getLogger(ESBootTestController.class);
 
     @Autowired
     private ESUserService eSUserService;
@@ -70,5 +70,5 @@ public class ESBootTestController {
         logger.info("search info");
         String search = eSUserService.search();
         return search;
-    }
+    }*/
 }

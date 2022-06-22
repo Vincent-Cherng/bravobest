@@ -131,7 +131,7 @@
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-client</artifactId>
-                <version>6.2.1</version>
+                <version>6.8.15</version>
             </dependency>
             <!--elasticSearch方式一：ElasticSearch  工具包 end-->
 
